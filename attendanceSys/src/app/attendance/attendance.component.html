@@ -1,0 +1,25 @@
+<h2>Attendance List</h2>
+<table class="table table-bordered">
+	<tr>
+		<th>#</th>
+		<th>fk_user</th>
+		<th>time</th>
+		<th>direct</th>
+		<th>type</th>
+	</tr>
+	<tr class="hovering" *ngFor="let att of listAttendance" [class.selected]="att === listAttendance" (click)="onSelect(att)">
+	  <td>{{att.rid}}</td>  
+	  <td>{{att.fk_user}}</td>
+      <td>{{att.time}}</td>
+      <td>{{att.direct}}</td>
+      <td>{{att.type}}</td>
+	</tr>
+</table>
+
+<div *ngIf="selectedAtt">
+  <h2>{{ selectedAtt.fk_user }} Details</h2>
+  <div><span>User id : </span>{{selectedAtt.fk_user}}</div>
+  <div><span>time: </span>{{selectedAtt.time}}</div>
+  <div><span>direct: </span>{{selectedAtt.direct}}</div>
+  <div><span>type: </span>{{selectedAtt.type}}</div>
+</div>

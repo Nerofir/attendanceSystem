@@ -1,0 +1,7 @@
+webservices\AttendanceWS.class
+model\Attendance.class
+config\WebMvcConfig.class
+config\ContextConfig.class
+config\WebAppInitializer.class
+services\AttendanceService.class
+services\AttendanceServiceImpl.class
