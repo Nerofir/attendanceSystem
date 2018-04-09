@@ -25,8 +25,8 @@ public class AttendanceWS {
 		return attendanceService.getAll();
 	}
 	
-	@RequestMapping(value="/{date}", method=RequestMethod.GET)
-	public List<Integer> findBydDate(@PathVariable String date) {
-		return attendanceService.wasAtWorkThisDay(date);
+	@RequestMapping(value="/{id}", method=RequestMethod.GET)
+	public List<Attendance> findBydDate(@PathVariable Integer id) {
+		return attendanceService.findById(id);
 	}
 }

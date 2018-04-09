@@ -23,9 +23,9 @@ public class AttendanceServiceImpl implements AttendanceService {
 	}
 	
 	@Override
-	public List<Integer> wasAtWorkThisDay(String date) {
-		String GET_DATA_BY_DATE = "select fk_user from psh_raw where time = ? ";
-		return jdbcTemplate.query(GET_DATA_BY_DATE, BeanPropertyRowMapper.newInstance(Integer.class), date);
+	public List<Attendance> findById(Integer date) {
+		String GET_DATA_BY_ID = "select * from psh_raw where fk_user = ? ";
+		return jdbcTemplate.query(GET_DATA_BY_ID, BeanPropertyRowMapper.newInstance(Attendance.class), date);
 	}
 
 }

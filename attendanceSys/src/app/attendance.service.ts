@@ -15,12 +15,17 @@ const httpOptions = {
 export class AttendanceService {
 
   private attendanceUrl = 'http://localhost:8080/attendanceSystem/attendance/all';  // URL to web api
-
+ private attendanceForOneUser = 'http://localhost:8080/attendanceSystem/attendance/';
   constructor(
     private http: HttpClient) { }
 
   getListAttendance(): Observable<AttModel[]> {
       return this.http.get<AttModel[]>(this.attendanceUrl);
+  }
+
+  getOneUserAttendance(id: number): Observable<AttModel[]> {
+      const url = `${this.attendanceForOneUser}${id}`;
+      return this.http.get<AttModel[]>(url);
   }
 }
 

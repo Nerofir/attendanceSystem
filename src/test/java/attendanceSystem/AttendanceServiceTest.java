@@ -27,12 +27,12 @@ public class AttendanceServiceTest {
 		Assert.assertTrue(attendance.size() > 0);
 	}
 	
-//	@Test
-//	public void findByDate() {
-//		String date = "2018-01-01";
-//		List<Integer> attendance = attendanceService.wasAtWorkThisDay(date);
-//		Assert.assertNotNull(attendance);
-//		Assert.assertTrue(attendance.size() > 0);
-//
-//	}
+	@Test
+	public void findByID() {
+		Integer id = 1;
+		List<Attendance> attendance = attendanceService.findById(id);
+		Assert.assertNotNull(attendance);
+		Assert.assertTrue(attendance.size() > 0);
+
+	}
 }

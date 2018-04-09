@@ -2,15 +2,13 @@ package model;
 
 import java.io.Serializable;
 import java.sql.Date;
-//import java.text.SimpleDateFormat;
 
 public class Attendance implements Serializable{
 	private static final long serialVersionUID = -6267924876808800107L;
 
 	private Integer rid; //id unique in the table , auto increment
 	private Integer fk_user;
-	private Date time;
-//	private Integer timestamp;
+	private Date time;//	private Integer timestamp;
 	private Integer direct; //1 enter ,  0 leave
 	private Integer type;  //1 general, 2 vacation, 3 doctor
 	
@@ -44,12 +42,4 @@ public class Attendance implements Serializable{
 	public void setType(Integer type) {
 		this.type = type;
 	}
-//	public Integer getTimestamp() {
-//		String timeStamp = new SimpleDateFormat("yyyy.MM.dd HH.mm.ss").format(this.getTime());
-//		return timestamp;
-//	}
-//	public void setTimestamp(Integer timestamp) {
-//		this.timestamp = timestamp;
-//	}
-	
 }

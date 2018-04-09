@@ -6,6 +6,6 @@ import model.Attendance;
 public interface AttendanceService {
 
 	List<Attendance> getAll();
-	List<Integer> wasAtWorkThisDay(String date);
+	List<Attendance> findById(Integer id);
 	
 }

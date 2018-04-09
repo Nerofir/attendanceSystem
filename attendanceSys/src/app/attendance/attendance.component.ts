@@ -10,6 +10,7 @@ import { AttendanceService } from '../attendance.service';
 export class AttendanceComponent implements OnInit {
     listAttendance: AttModel[];
     selectedAtt: AttModel;
+    oneUserAttendance: AttModel[];
 
   constructor(private attendanceService: AttendanceService) { }
 
@@ -17,11 +18,17 @@ export class AttendanceComponent implements OnInit {
     this.getListAttendance();
   }
 
-  getListAttendance() : void {
-    this.attendanceService.getListAttendance()
-    .subscribe(listAttendance => this.listAttendance = listAttendance)
+  search(id: number): void {
+      this.attendanceService.getOneUserAttendance(id)
+      .subscribe(oneUserAttendance => this.oneUserAttendance = oneUserAttendance);
   }
-  
+
+  getListAttendance(): void {
+    this.attendanceService.getListAttendance()
+    .subscribe(listAttendance => this.listAttendance = listAttendance);
+  }
+
+
   onSelect(att: AttModel): void {
     this.selectedAtt = att;
   }

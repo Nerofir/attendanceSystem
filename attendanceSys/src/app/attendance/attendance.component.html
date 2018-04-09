@@ -23,3 +23,12 @@
   <div><span>direct: </span>{{selectedAtt.direct}}</div>
   <div><span>type: </span>{{selectedAtt.type}}</div>
 </div>
+
+<div>
+<h4>ID Search</h4>
+    <input #searchBox (keyup)="search(searchBox.value)" />
+	<div *ngFor="let attend of oneUserAttendance">
+    	<div>{{attend.rid}}, {{attend.fk_user}}, {{attend.time}}, {{attend.direct}}, {{attend.type}}</div>  
+    </div>
+
+</div>
