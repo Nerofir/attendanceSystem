@@ -16,7 +16,7 @@
 	</tr>
 </table>
 
-<div *ngIf="selectedAtt">
+<div class="onTheLeft" *ngIf="selectedAtt">
   <h2>{{ selectedAtt.fk_user }} Details</h2>
   <div><span>User id : </span>{{selectedAtt.fk_user}}</div>
   <div><span>time: </span>{{selectedAtt.time}}</div>
@@ -24,10 +24,10 @@
   <div><span>type: </span>{{selectedAtt.type}}</div>
 </div>
 
-<div>
+<div class="onTheLeft" >
 <h4>ID Search</h4>
     <input #searchBox (keyup)="search(searchBox.value)" />
-	<div *ngFor="let attend of oneUserAttendance">
+	<div class="withId" *ngFor="let attend of oneUserAttendance">
     	<div>{{attend.rid}}, {{attend.fk_user}}, {{attend.time}}, {{attend.direct}}, {{attend.type}}</div>  
     </div>
 
