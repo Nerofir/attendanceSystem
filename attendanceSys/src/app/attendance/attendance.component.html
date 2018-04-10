@@ -25,7 +25,7 @@
 </div>
 
 <div class="onTheLeft" >
-<h4>ID Search</h4>
+<h4>Fk_user Search</h4>
     <input #searchBox (keyup)="search(searchBox.value)" />
 	<div class="withId" *ngFor="let attend of oneUserAttendance">
     	<div>{{attend.rid}}, {{attend.fk_user}}, {{attend.time}}, {{attend.direct}}, {{attend.type}}</div>  
